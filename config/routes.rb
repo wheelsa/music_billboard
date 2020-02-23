@@ -5,7 +5,7 @@ root 'artists#index'
 resources :billboards
 
 resources :artists do
-  resources :movies
+  resources :songs
 end 
 # Custom songs to billboards
 get 'new_billboard_song/:id', to: 'billboards#new_song', as: 'new_billboard_song'
