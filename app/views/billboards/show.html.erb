@@ -1,2 +1,10 @@
-<h1>Billboards#show</h1>
-<p>Find me in app/views/billboards/show.html.erb</p>
+<h1><%="#{@billboard.name} Hottest Songs!"%></h1>
+	<%= link_to 'Back to all Billboard Lists', billboards_path %>
+<% if @songs.any? %>
+  <% @songs.each do |song| %>
+    <p><%= song.name %></p>
+     <%= link_to 'Remove From Billboard', remove_billboard_song_path(@billboard, song), method: :delete %>
+  <% end %>
+<% end %>
+
+<%= link_to 'Add Song', new_billboard_song_path(@billboard) %> |

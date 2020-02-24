@@ -1,0 +1,11 @@
+<%= form_for @billboard, :html => {:class => "form center"} do |f| %>
+<div class="form-group">
+<p> <%= f.label :name, class: "form-label" %></p>
+<p> <%= f.text_field :name, class: "form-control" %></p>
+<p> <%= f.label :genre, class: "form-label" %></p>
+<p> <%= f.text_field :genre, class: "form-control" %></p>
+<p> <%= f.label :location, class: "form-label" %></p>
+<p> <%= f.text_field :location, class: "form-control" %></p>
+ </div>
+<p> <%= f.submit class: 'btn btn-primary'%></p>
+<% end %>

@@ -1,2 +1,19 @@
-<h1>Billboards#index</h1>
-<p>Find me in app/views/billboards/index.html.erb</p>
+<h1>Billboard List</h1>
+<h2>Find the Hottest New Songs!</h2>
+<p><%= link_to "Add Billboard", new_billboard_path %></p>
+
+<% @billboards.each do |billboard| %>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+ <h5 class="card-title"><%= billboard.name %></h5>
+  <p><%= "Genre: #{billboard.genre}" %></p>
+  <p><%= "Locations: #{billboard.location}" %></p>
+   <p> <%= link_to 'See Top Songs', billboard %> </p>
+   <p> <%= link_to "Edit    ", edit_billboard_path(billboard)%></p>
+  <p> <%= link_to billboard_path(billboard), method: :delete do %>
+    Delete
+  <i class="far fa-trash-alt"></i>
+  <% end %></p>
+    </div>
+</div>
+<% end %>
